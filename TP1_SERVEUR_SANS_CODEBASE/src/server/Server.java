@@ -24,7 +24,7 @@ public class Server {
 				
 				System.setProperty("java.security.policy",	absolutePathPolicy);
 				System.setSecurityManager (new SecurityManager());
-				System.setProperty( "java.rmi.server.codebase", "file:///"+absolutePath);
+				//System.setProperty( "java.rmi.server.codebase", "file:///"+absolutePath);
 				
 				Registry registry = LocateRegistry.createRegistry(1099);
 				if (registry == null)

@@ -39,12 +39,13 @@ public class Server {
 					Animal animal1=new Animal("Gouttelette", "LeChat",chat,"Persan", new DossierSuivi("En bonne santé"));
 					Animal animal2=new Animal("Nicolas", "LeChien",chien,"Labrador", new DossierSuivi("A la patte cassée"));
 					Animal animal3=new Animal("Regis", "LaTortue",tortue,"Testudo", new DossierSuivi("En surpoids"));
-					
+					Animal animal4=new Animal("Oscar", "LeChat", chat,"Siamois",new DossierSuivi("A de l'arthrose"));
 					List<IAnimal> nouveauxPatients = new ArrayList<IAnimal>();
 					
 					nouveauxPatients.add(animal1);
 					nouveauxPatients.add(animal2);
 					nouveauxPatients.add(animal3);
+					nouveauxPatients.add(animal4);
 					
 					CabinetVeterinaire cabinet = new CabinetVeterinaire(nouveauxPatients);
 					System.out.println(cabinet.getPatients());
