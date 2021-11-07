@@ -61,7 +61,6 @@ public class CabinetVeterinaire extends UnicastRemoteObject implements ICabinetV
 		DossierSuivi dossierSuivi = new DossierSuivi(suivi);
 		Animal animal = new Animal(name, nameOwner, espece, race, dossierSuivi);
 		this.patients.add(animal);
-		// on envoie un msg à tous les clients
 		int size = patients.size();
 		if (size == 100 || size == 500 || size == 1000) {
 			for (IClient client : this.clients) {
@@ -76,8 +75,8 @@ public class CabinetVeterinaire extends UnicastRemoteObject implements ICabinetV
 	}
 	
 	
-	public void removePatient(String name, String nameOwner) throws RemoteException {// changer la recherche par un code patient ou par le
-		IAnimal aniSupp = null;															// nameOwner
+	public void removePatient(String name, String nameOwner) throws RemoteException {
+		IAnimal aniSupp = null;															
 		for (IAnimal animal : patients) {
 			if (animal.getName().equals(name) && animal.getNameOwner().equals(nameOwner)) {
 				aniSupp = animal;
@@ -91,6 +90,5 @@ public class CabinetVeterinaire extends UnicastRemoteObject implements ICabinetV
 				client.afficherAlerte(size, "baisse");
 			}
 		}	
-
 	}
 }
